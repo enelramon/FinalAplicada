@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A607CCF0-EDA5-4159-9542-6A03834F0133}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LewisVentas</RootNamespace>
+    <AssemblyName>LewisVentas</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CategoriasBLL.cs" />
+    <Compile Include="BLL\PersonasBLL.cs" />
+    <Compile Include="BLL\ProductosBLL.cs" />
+    <Compile Include="BLL\UsersBLL.cs" />
+    <Compile Include="BLL\VentasBLL.cs" />
+    <Compile Include="DAL\Context.cs" />
+    <Compile Include="ENTIDADES\Category.cs" />
+    <Compile Include="ENTIDADES\DetalleVentas.cs" />
+    <Compile Include="ENTIDADES\Personas.cs" />
+    <Compile Include="ENTIDADES\Productos.cs" />
+    <Compile Include="ENTIDADES\Telefonos.cs" />
+    <Compile Include="ENTIDADES\Users.cs" />
+    <Compile Include="ENTIDADES\Ventas.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Articulos\CreateEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Articulos\CreateEditForm.Designer.cs">
+      <DependentUpon>CreateEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Articulos\ProductosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Articulos\ProductosForm.Designer.cs">
+      <DependentUpon>ProductosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Categorias\CategoriasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Categorias\CategoriasForm.Designer.cs">
+      <DependentUpon>CategoriasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Categorias\EditCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Categorias\EditCreateForm.Designer.cs">
+      <DependentUpon>EditCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clientes\ClientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clientes\ClientesForm.Designer.cs">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Clientes\EditCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Clientes\EditCreateForm.Designer.cs">
+      <DependentUpon>EditCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Empleado\EditarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleado\EditarForm.Designer.cs">
+      <DependentUpon>EditarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Empleado\EmpleadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleado\EmpleadoForm.Designer.cs">
+      <DependentUpon>EmpleadoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LayoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LayoutForm.Designer.cs">
+      <DependentUpon>LayoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Proveedores\EditCreateProForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Proveedores\EditCreateProForm.Designer.cs">
+      <DependentUpon>EditCreateProForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Proveedores\ProveedoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Proveedores\ProveedoresForm.Designer.cs">
+      <DependentUpon>ProveedoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VentasForm\CreateVentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VentasForm\CreateVentasForm.Designer.cs">
+      <DependentUpon>CreateVentasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VentasForm\MostarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VentasForm\MostarProductos.Designer.cs">
+      <DependentUpon>MostarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VentasForm\VentasLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VentasForm\VentasLista.Designer.cs">
+      <DependentUpon>VentasLista.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Articulos\CreateEditForm.resx">
+      <DependentUpon>CreateEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Articulos\ProductosForm.resx">
+      <DependentUpon>ProductosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Categorias\CategoriasForm.resx">
+      <DependentUpon>CategoriasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Categorias\EditCreateForm.resx">
+      <DependentUpon>EditCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clientes\ClientesForm.resx">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Clientes\EditCreateForm.resx">
+      <DependentUpon>EditCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleado\EditarForm.resx">
+      <DependentUpon>EditarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleado\EmpleadoForm.resx">
+      <DependentUpon>EmpleadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LayoutForm.resx">
+      <DependentUpon>LayoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Proveedores\EditCreateProForm.resx">
+      <DependentUpon>EditCreateProForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Proveedores\ProveedoresForm.resx">
+      <DependentUpon>ProveedoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VentasForm\CreateVentasForm.resx">
+      <DependentUpon>CreateVentasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VentasForm\MostarProductos.resx">
+      <DependentUpon>MostarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VentasForm\VentasLista.resx">
+      <DependentUpon>VentasLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile-Menu-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoVentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon cerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon restaurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ls_bkgd_color1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-receiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-receiver %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-users-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-card-outlined-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-on-square-of-paper-interface-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Compras\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number-blocks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-register %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-register %282%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
