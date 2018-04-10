@@ -119,7 +119,8 @@ namespace LewisVentas.View.VentasForm
                 MessageBox.Show("Error, Intentelo de nuevo");
             }
         }
-
+           
+          
         private Ventas  LlenaClase()
         {
             Ventas Ven = new Ventas();
